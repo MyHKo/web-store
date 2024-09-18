@@ -1,0 +1,91 @@
+$header-button-style: (
+        color: #3F826D,
+        text-decoration: none,
+        cursor: pointer,
+        border-radius: 7px,
+        outline-offset: 7px,
+        transition: 0.1s ease-in-out
+);
+
+$header-button-style-focus-hover: (
+        outline: 5px solid #3F826D
+);
+
+header {
+  background-color: #ACF39D;
+  width: 100vw;
+  height: 10vh;
+
+  @media (max-width: 700px){
+    height: 7vh;
+  }
+}
+
+.headerContainer {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10vw;
+  margin-left: 3vw;
+}
+
+.logoImage {
+  height: 80%;
+  width: auto;
+  cursor: pointer;
+}
+
+.cartImage {
+  height: 60%;
+  width: auto;
+  cursor: pointer;
+  border-radius: 7px;
+  outline-offset: 7px;
+  transition: 0.1s ease-in-out;
+
+  &:hover, &:focus{
+    @each $prop, $value in $header-button-style-focus-hover {
+      #{$prop}: #{$value};
+    }
+  }
+}
+
+.searcher {
+  height: 5vh;
+  width: 20vw;
+  border-radius: 7px;
+  border: none;
+  outline-offset: 7px;
+  transition: 0.1s ease-in-out;
+
+  &:hover, &:focus{
+    @each $prop, $value in $header-button-style-focus-hover {
+      #{$prop}: #{$value};
+    }
+  }
+}
+
+.homeButton{
+  @each $prop, $value in $header-button-style {
+    #{$prop}: #{$value};
+  }
+
+  &:hover, &:focus{
+    @each $prop, $value in $header-button-style-focus-hover {
+      #{$prop}: #{$value};
+    }
+  }
+}
+
+.catalogButton {
+  @each $prop, $value in $header-button-style {
+    #{$prop}: #{$value};
+  }
+
+  &:hover, &:focus{
+    @each $prop, $value in $header-button-style-focus-hover {
+      #{$prop}: #{$value};
+    }
+  }
+}

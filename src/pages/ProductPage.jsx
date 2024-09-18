@@ -1,6 +1,5 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
 import {useParams} from "react-router-dom";
 
 export default function ProductPage() {
@@ -9,7 +8,6 @@ export default function ProductPage() {
     return (
         <>
             <Header />
-            <NavBar />
             <img src="photo" alt="ProductPhoto" />
                 <p>{id}</p>
                     <Footer />
