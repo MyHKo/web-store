@@ -17,10 +17,9 @@
   outline: 3px solid #3F826D;
   outline-offset: 7px;
   transition: 0.2s ease-in-out;
-
-  &:hover {
-    outline: 5px solid #3F826D;
-  }
+}
+.productImage:hover {
+  outline: 5px solid #3F826D;
 }
 
 .productName {
@@ -30,3 +29,5 @@
 .productDescription {
   margin-right: 10%;
 }
+
+/*# sourceMappingURL=ProductCard.css.map */

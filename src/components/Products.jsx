@@ -1,9 +1,15 @@
+import ProductCard from './ProductCard.jsx';
+import "../styles/Products.scss"
 
 export default function Products() {
     return (
         <>
-        <div className="productElement">Rose</div>
-        <div>Product 2</div>
+        <div className="cardsContainer">
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+        </div>
         </>
     )
 }
