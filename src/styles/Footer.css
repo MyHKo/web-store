@@ -1,0 +1,11 @@
+footer {
+  height: 10vh;
+  margin: 0;
+  background-color: #ACF39D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3F826D;
+}
+
+/*# sourceMappingURL=Footer.css.map */

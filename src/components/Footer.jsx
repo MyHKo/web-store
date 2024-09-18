@@ -1,8 +1,9 @@
+import "../styles/Footer.scss"
 
 export default function Footer() {
     return (
         <footer>
-        <p>developed in 2024</p>
+            <p>Developed in 2024</p>
         </footer>
     )
 }
