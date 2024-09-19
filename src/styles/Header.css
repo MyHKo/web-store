@@ -6,7 +6,7 @@ header {
 }
 @media (max-width: 700px) {
   header {
-    height: 7vh;
+    height: 7.5vh;
   }
 }
 
@@ -36,6 +36,11 @@ header {
 .cartImage:hover, .cartImage:focus {
   outline: 5px solid #3F826D;
 }
+@media (max-width: 700px) {
+  .cartImage:hover, .cartImage:focus {
+    outline: 3px solid #3F826D;
+  }
+}
 
 .searcher {
   height: 5vh;
@@ -47,6 +52,16 @@ header {
 }
 .searcher:hover, .searcher:focus {
   outline: 5px solid #3F826D;
+}
+@media (max-width: 700px) {
+  .searcher:hover, .searcher:focus {
+    outline: 3px solid #3F826D;
+  }
+}
+@media (max-width: 700px) {
+  .searcher {
+    height: 3vh;
+  }
 }
 
 .homeButton {
@@ -60,6 +75,16 @@ header {
 .homeButton:hover, .homeButton:focus {
   outline: 5px solid #3F826D;
 }
+@media (max-width: 700px) {
+  .homeButton:hover, .homeButton:focus {
+    outline: 3px solid #3F826D;
+  }
+}
+@media (max-width: 700px) {
+  .homeButton {
+    font-size: 18px;
+  }
+}
 
 .catalogButton {
   color: #3F826D;
@@ -71,6 +96,16 @@ header {
 }
 .catalogButton:hover, .catalogButton:focus {
   outline: 5px solid #3F826D;
+}
+@media (max-width: 700px) {
+  .catalogButton:hover, .catalogButton:focus {
+    outline: 3px solid #3F826D;
+  }
+}
+@media (max-width: 700px) {
+  .catalogButton {
+    font-size: 18px;
+  }
 }
 
 /*# sourceMappingURL=Header.css.map */

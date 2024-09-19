@@ -7,9 +7,6 @@ $header-button-style: (
         transition: 0.1s ease-in-out
 );
 
-$header-button-style-focus-hover: (
-        outline: 5px solid #3F826D
-);
 
 header {
   background-color: #ACF39D;
@@ -18,7 +15,7 @@ header {
   height: 10vh;
 
   @media (max-width: 700px){
-    height: 7vh;
+    height: 7.5vh;
   }
 }
 
@@ -46,8 +43,10 @@ header {
   transition: 0.1s ease-in-out;
 
   &:hover, &:focus{
-    @each $prop, $value in $header-button-style-focus-hover {
-      #{$prop}: #{$value};
+    outline: 5px solid #3F826D;
+
+    @media (max-width: 700px) {
+      outline: 3px solid #3F826D;
     }
   }
 }
@@ -61,9 +60,15 @@ header {
   transition: 0.1s ease-in-out;
 
   &:hover, &:focus{
-    @each $prop, $value in $header-button-style-focus-hover {
-      #{$prop}: #{$value};
+    outline: 5px solid #3F826D;
+
+    @media (max-width: 700px) {
+      outline: 3px solid #3F826D;
     }
+  }
+
+  @media (max-width: 700px) {
+    height: 3vh;
   }
 }
 
@@ -73,9 +78,15 @@ header {
   }
 
   &:hover, &:focus{
-    @each $prop, $value in $header-button-style-focus-hover {
-      #{$prop}: #{$value};
+    outline: 5px solid #3F826D;
+
+    @media (max-width: 700px) {
+      outline: 3px solid #3F826D;
     }
+  }
+
+  @media (max-width: 700px) {
+    font-size: 18px;
   }
 }
 
@@ -85,8 +96,14 @@ header {
   }
 
   &:hover, &:focus{
-    @each $prop, $value in $header-button-style-focus-hover {
-      #{$prop}: #{$value};
+    outline: 5px solid #3F826D;
+
+    @media (max-width: 700px) {
+      outline: 3px solid #3F826D
     }
+  }
+
+  @media (max-width: 700px) {
+    font-size: 18px;
   }
 }
