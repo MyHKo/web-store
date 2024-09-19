@@ -1,4 +1,5 @@
 import CatalogEntry from "./CatalogEntry"
+import "../styles/CatalogTable.scss"
 
 export default function CatalogTable() {
     return (
