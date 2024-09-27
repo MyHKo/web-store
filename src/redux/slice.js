@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit'
 import {getProducts} from "./thunk.js";
 
 const initialState = {
-    productList: null,
+    productIdList: null,
     productsInCart: [],
     searchString: "",
     isSearchFieldBlocked: false,
@@ -14,7 +14,7 @@ const slice = createSlice({
     initialState,
     reducers: {
         setProductList: (state, action) => {
-            state.productList = action.payload
+            state.productIdList = action.payload
         },
         setProductsInCart: (state, action) => {
             state.productsInCart = action.payload
@@ -33,7 +33,7 @@ const slice = createSlice({
         })
             .addCase(getProducts.fulfilled, (state, action) => {
                 state.isContentLoading = false
-                state.productList = action.payload.ids
+                state.productIdList = action.payload.ids
             })
     }
 })

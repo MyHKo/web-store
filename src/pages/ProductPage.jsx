@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {useParams} from "react-router-dom";
-import photo from "../assets/Rose.jpeg";
+import photo from "../../public/database/83012/83012.jpeg";
 import "../styles/ProductPage.scss"
 
 export default function ProductPage() {

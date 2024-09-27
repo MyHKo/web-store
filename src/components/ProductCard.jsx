@@ -1,18 +1,36 @@
 import "../styles/ProductCard.scss"
-import rose from "../assets/Rose.jpeg"
+import { useState } from "react";
 
-export default function ProductCard(props) {
+export default function ProductCard({ id }) {
+    const [productData, setProductData] = useState(null);
 
+    async function fetchProductData() {
+        const dataResponse = await fetch(`/database/${id}/${id}.json`)
+        const data = await dataResponse.json();
+
+        const imageResponse = await fetch(`/database/${id}/${id}.jpeg`);
+        const image = await imageResponse.blob();
+
+        setProductData({
+            name: data.name,
+            description: data.shortDescription,
+            image: URL.createObjectURL(image),
+        });
+    }
+
+    if (!productData) {
+        fetchProductData();
+    }
+
+    console.log(productData);
 
     return (
         <div className="productCard">
-                <img className="productImage" src={rose} alt="Rose"/>
+                <img className="productImage" src={productData === null ? "LOADING" : productData.image} alt="Rose"/>
 
             <div className="productDescription">
-            <h2 className="productName">Red Rose – Fresh Cut Flower</h2>
-                This fresh Red Rose is a classic choice for gifting or decoration. It features deep red
-                    petals with a natural sheen and a long, sturdy stem. The rose is carefully harvested to ensure
-                    long-lasting freshness and vibrant color.
+            <h2 className="productName">{productData === null ? "LOADING" : productData.name}</h2>
+                {productData === null ? "LOADING" : productData.description}
             </div>
         </div>
     )
