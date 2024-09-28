@@ -1,30 +1,59 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {useParams} from "react-router-dom";
-import photo from "../../public/database/83012/83012.jpeg";
 import "../styles/ProductPage.scss"
+import {useEffect, useState} from "react";
 
 export default function ProductPage() {
     const { id } = useParams();
+    const [productData, setProductData] = useState(null);
+    let informationBullets;
+
+    async function getProductData(productId) {
+        console.log(productId);
+
+        const data = await fetch(`/database/${productId}/${productId}.json`);
+        const dataJson = await data.json();
+
+        const imageResponse = await fetch(`/database/${productId}/${productId}.jpeg`);
+        const image = await imageResponse.blob();
+
+        setProductData({...dataJson, image: URL.createObjectURL(image) });
+    }
+
+    function createInformationBullets(listOfBullets) {
+        const arrayOfBullets = [];
+        for(let key in listOfBullets) {
+            arrayOfBullets.push(<li>{key}: {listOfBullets[key]}</li>);
+        }
+        return (
+            <ul>
+                {arrayOfBullets}
+            </ul>
+        );
+    }
+
+    useEffect(() => {
+        getProductData(id);
+    }, []);
+
+    if(productData !== null) {
+        informationBullets = createInformationBullets(productData.informationPoints);
+    }
 
     return (
         <>
             <Header />
             <div className="main-product-container">
-                <img className="product-photo" src={photo} alt="product-photo" />
+                <img className="product-photo" src={productData === null ? "LOADING":productData.image} alt="LOADING" />
 
                 <div className="name-and-description">
-                    <h1 className="product-name-on-page">Rose Plant</h1>
-                    <p className="product-description-on-page">This fresh Red Rose is a classic choice for gifting or decoration. It features deep red petals with a natural sheen and a long, sturdy stem. The rose is carefully harvested to ensure long-lasting freshness and vibrant color.
-                        <ul>
-                            <li>Color: Rich red</li>
-                        <li>Stem Length: 18–24 inches</li>
-                        <li>Fragrance: Light, floral scent</li>
-                        <li>Care: Keep in water and away from direct sunlight for longer vase life</li>
-                            <li>Packaging: Securely wrapped to maintain freshness during delivery</li>
-                        </ul>
-
-                        Perfect for special occasions like anniversaries, birthdays, or just to brighten up any room.</p>
+                    <h1 className="product-name-on-page">{productData === null ? "LOADING" : productData.name}t</h1>
+                    <p className="product-description-on-page">
+                        <p>{productData === null ? "LOADING" : productData.shortDescription}</p>
+                        {informationBullets}
+                        <p>{productData === null ? "LOADING" : productData.descriptionExpansion}</p>
+                    </p>
                 </div>
 
                 <div className="add-to-cart-button-on-page">

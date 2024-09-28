@@ -1,8 +1,10 @@
 import "../styles/ProductCard.scss"
 import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function ProductCard({ id }) {
     const [productData, setProductData] = useState(null);
+    const navigate = useNavigate();
 
     async function fetchProductData() {
         const dataResponse = await fetch(`/database/${id}/${id}.json`)
@@ -25,7 +27,8 @@ export default function ProductCard({ id }) {
 
     return (
         <div className="productCard">
-                <img className="productImage" src={productData === null ? "LOADING" : productData.image} alt="Rose"/>
+                <img className="productImage" src={productData === null ? "LOADING" : productData.image} alt="Rose"
+                onClick={() => {navigate(`/catalog/${id}`)}} />
 
             <div className="productDescription">
             <h2 className="productName">{productData === null ? "LOADING" : productData.name}</h2>
