@@ -1,9 +1,28 @@
 import "../styles/CatalogTable.scss"
+import {useEffect, useState} from "react"
 
-export default function CatalogTable() {
-    const columns = [[31122, "Dandelion", "A yellow flower"],[31312, "Dandelion", "A yellow flower"],[31122, "Dandelion", "A yellow flower"],[31312, "Dandelion", "A yellow flower"],[31122, "Dandelion", "A yellow flower"],[31312, "Dandelion", "A yellow flower"],[31122, "Dandelion", "A yellow flower"],[31312, "Dandelion", "A yellow flower"],[31312, "Dandelion", "This fresh Red Rose is a classic choice for gifting or decoration. It features deep red petals with a natural sheen and a long, sturdy stem. The rose is carefully harvested to ensure long-lasting freshness and vibrant color."],[33312, "Dandelion", "A yellow flower with something on its back"]]
+export default function CatalogTable({ productIdList }) {
+    const [columns, setColumns] = useState([])
+
+    async function createCollumns(productIdList) {
+        for(let i = 0; i < productIdList.length; i++) {
+            const data = await fetch(`/database/${productIdList[i]}/${productIdList[i]}.json`)
+            const dataJson = await data.json()
+            const row = []
+            row.push(productIdList[i])
+            row.push(dataJson.name)
+            row.push(dataJson.shortDescription)
+            await setColumns(prevColumns => [...prevColumns, row])
+        }
+    }
+
+    useEffect(() => {
+        createCollumns(productIdList)
+    }, [])
+
+
     const rows = columns.map((row) => (
-        <tr>
+        <tr key={row[0]}>
             <td>{row[0]}</td><td>{row[1]}</td><td>{row[2]}</td>
         </tr>
     ))
