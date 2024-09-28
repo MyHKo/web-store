@@ -26,9 +26,8 @@ export default function ProductCard({ id }) {
 
 
     return (
-        <div className="productCard">
-                <img className="productImage" src={productData === null ? "LOADING" : productData.image} alt="Rose"
-                onClick={() => {navigate(`/catalog/${id}`)}} />
+        <div className="productCard" onClick={() => {navigate(`/catalog/${id}`)}}>
+                <img className="productImage" src={productData === null ? "LOADING" : productData.image} alt="Rose"/>
 
             <div className="productDescription">
             <h2 className="productName">{productData === null ? "LOADING" : productData.name}</h2>
