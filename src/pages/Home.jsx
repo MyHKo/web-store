@@ -11,10 +11,8 @@ export default function Home() {
     const { productIdList } = useSelector((state) => state.globalStateSlice);
 
     useEffect(() => {
-        if(productIdList === null) {
             dispatch(getProducts());
-        }
-    })
+    }, [])
 
     return (
         <>

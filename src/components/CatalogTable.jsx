@@ -2,9 +2,9 @@ import "../styles/CatalogTable.scss"
 import {useEffect, useState} from "react"
 
 export default function CatalogTable({ productIdList }) {
-    const [columns, setColumns] = useState([])
+    const [rows, setRows] = useState([])
 
-    async function createCollumns(productIdList) {
+    async function createRows(productIdList) {
         for(let i = 0; i < productIdList.length; i++) {
             const data = await fetch(`/database/${productIdList[i]}/${productIdList[i]}.json`)
             const dataJson = await data.json()
@@ -12,16 +12,16 @@ export default function CatalogTable({ productIdList }) {
             row.push(productIdList[i])
             row.push(dataJson.name)
             row.push(dataJson.shortDescription)
-            await setColumns(prevColumns => [...prevColumns, row])
+            setRows(prevRows => [...prevRows, row])
         }
     }
 
     useEffect(() => {
-        createCollumns(productIdList)
+        createRows(productIdList)
     }, [])
 
 
-    const rows = columns.map((row) => (
+    const tableRows = rows.map((row) => (
         <tr key={row[0]}>
             <td>{row[0]}</td><td>{row[1]}</td><td>{row[2]}</td>
         </tr>
@@ -37,7 +37,7 @@ export default function CatalogTable({ productIdList }) {
             </tr>
             </thead>
             <tbody>
-            {rows}
+            {tableRows}
             </tbody>
         </table>
     )

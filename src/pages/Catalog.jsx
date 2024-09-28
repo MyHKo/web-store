@@ -12,7 +12,7 @@ export default function Catalog() {
 
         useEffect(() => {
                 dispatch(getProducts());
-        })
+        },[])
 
         return (
             <>

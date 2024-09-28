@@ -1,5 +1,5 @@
 import "../styles/ProductCard.scss"
-import { useState } from "react";
+import {useEffect, useState} from "react";
 
 export default function ProductCard({ id }) {
     const [productData, setProductData] = useState(null);
@@ -11,18 +11,17 @@ export default function ProductCard({ id }) {
         const imageResponse = await fetch(`/database/${id}/${id}.jpeg`);
         const image = await imageResponse.blob();
 
-        setProductData({
+        await setProductData({
             name: data.name,
             description: data.shortDescription,
             image: URL.createObjectURL(image),
         });
     }
 
-    if (!productData) {
+    useEffect(() => {
         fetchProductData();
-    }
+    },[])
 
-    console.log(productData);
 
     return (
         <div className="productCard">
