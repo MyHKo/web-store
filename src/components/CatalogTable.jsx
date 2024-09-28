@@ -1,5 +1,6 @@
 import "../styles/CatalogTable.scss"
 import {useEffect, useState} from "react"
+import {NavLink} from "react-router-dom";
 
 export default function CatalogTable({ productIdList }) {
     const [rows, setRows] = useState([])
@@ -39,7 +40,7 @@ export default function CatalogTable({ productIdList }) {
 
     const tableRows = rows.map((row) => (
         <tr key={row[0]}>
-            <td>{row[0]}</td><td>{row[1]}</td><td>{row[2]}</td>
+            <td>{row[0]}</td><td><NavLink to={`/catalog/${row[0]}`}>{row[1]}</NavLink></td><td>{row[2]}</td>
         </tr>
     ))
 
