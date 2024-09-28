@@ -10,8 +10,6 @@ export default function ProductPage() {
     let informationBullets;
 
     async function getProductData(productId) {
-        console.log(productId);
-
         const data = await fetch(`/database/${productId}/${productId}.json`);
         const dataJson = await data.json();
 
@@ -24,7 +22,7 @@ export default function ProductPage() {
     function createInformationBullets(listOfBullets) {
         const arrayOfBullets = [];
         for(let key in listOfBullets) {
-            arrayOfBullets.push(<li>{key}: {listOfBullets[key]}</li>);
+            arrayOfBullets.push(<li key={key}>{key}: {listOfBullets[key]}</li>);
         }
         return (
             <ul>
@@ -48,7 +46,7 @@ export default function ProductPage() {
                 <img className="product-photo" src={productData === null ? "LOADING":productData.image} alt="LOADING" />
 
                 <div className="name-and-description">
-                    <h1 className="product-name-on-page">{productData === null ? "LOADING" : productData.name}t</h1>
+                    <h1 className="product-name-on-page">{productData === null ? "LOADING" : productData.name}</h1>
                     <p className="product-description-on-page">
                         <p>{productData === null ? "LOADING" : productData.shortDescription}</p>
                         {informationBullets}
