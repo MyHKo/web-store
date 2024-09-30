@@ -8,7 +8,7 @@ import "../styles/Home.scss"
 
 export default function Home() {
     const dispatch = useDispatch();
-    const { productIdList } = useSelector((state) => state.globalStateSlice);
+    const { productIdAndNameList } = useSelector((state) => state.globalStateSlice);
 
     useEffect(() => {
             dispatch(getProducts());
@@ -16,9 +16,9 @@ export default function Home() {
 
     return (
         <>
-            <Header />
+            <Header  productIdAndNameList={productIdAndNameList}/>
             <div className="mainContainer">
-                {productIdList === null ? "LOADING" : <Products productIdList={productIdList} />}
+                {productIdAndNameList === null ? "LOADING" : <Products productIdAndNameList={productIdAndNameList} />}
             </div>
             <Footer />
         </>

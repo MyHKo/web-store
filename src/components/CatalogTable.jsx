@@ -2,16 +2,16 @@ import "../styles/CatalogTable.scss"
 import {useEffect, useState} from "react"
 import {NavLink} from "react-router-dom";
 
-export default function CatalogTable({ productIdList }) {
+export default function CatalogTable({ productIdAndNameList }) {
     const [rows, setRows] = useState([])
 
-    async function createRows(productIdList) {
+    async function createRows(productIdAndNameList) {
         const newRows = [];
-        for(let i = 0; i < productIdList.length; i++) {
-            const data = await fetch(`/database/${productIdList[i]}/${productIdList[i]}.json`);
+        for(let i = 0; i < productIdAndNameList.length; i++) {
+            const data = await fetch(`/database/${productIdAndNameList[i][0]}/${productIdAndNameList[i][0]}.json`);
             const dataJson = await data.json();
             const row = [
-                productIdList[i],
+                productIdAndNameList[i][0],
                 dataJson.name,
                 dataJson.shortDescription
             ];
@@ -34,7 +34,7 @@ export default function CatalogTable({ productIdList }) {
     }
 
     useEffect(() => {
-        createRows(productIdList)
+        createRows(productIdAndNameList)
     }, [])
     
 

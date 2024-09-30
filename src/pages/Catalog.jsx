@@ -8,7 +8,7 @@ import "../styles/Catalog.scss"
 
 export default function Catalog() {
         const dispatch = useDispatch();
-        const { productIdList } = useSelector((state) => state.globalStateSlice);
+        const { productIdAndNameList } = useSelector((state) => state.globalStateSlice);
 
         useEffect(() => {
                 dispatch(getProducts());
@@ -18,7 +18,7 @@ export default function Catalog() {
             <>
                 <Header />
                 <div className="main-catalog-container">
-                        {productIdList === null ? "LOADING" : <CatalogTable productIdList={productIdList}/>}
+                        {productIdAndNameList === null ? "LOADING" : <CatalogTable productIdAndNameList={productIdAndNameList}/>}
                 </div>
                 <Footer />
             </>
