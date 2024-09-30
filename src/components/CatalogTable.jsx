@@ -35,7 +35,7 @@ export default function CatalogTable({ productIdAndNameList }) {
 
     useEffect(() => {
         createRows(productIdAndNameList)
-    }, [])
+    }, [productIdAndNameList])
     
 
     const tableRows = rows.map((row) => (
