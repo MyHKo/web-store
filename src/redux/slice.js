@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit'
 import {getProducts} from "./thunk.js";
 
 const initialState = {
-    productIdAndNameList: null,
+    productIdAndNameList: [],
     productsInCart: [],
     searchString: "",
     isSearchFieldBlocked: false,
