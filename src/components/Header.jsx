@@ -4,12 +4,13 @@ import cart from "../assets/cart.svg"
 import {NavLink, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {setSearchString, setProductList} from "../redux/slice.js"
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {getProducts} from "../redux/thunk.js";
 
 export default function Header({ productIdAndNameList }) {
     const navigate = useNavigate();
-    const { searchString } = useSelector((state) => state.globalStateSlice);
+    const [isBannerVisible, setIsBannerVisible] = useState(false);
+    const { searchString, productsInCart } = useSelector((state) => state.globalStateSlice);
     const dispatch = useDispatch();
 
     function handleInputChange(event) {
@@ -17,7 +18,12 @@ export default function Header({ productIdAndNameList }) {
     }
 
     function goToCart(){
-        navigate("/cart");
+        if(productsInCart.length > 0){
+            navigate("/cart");
+        }
+        else {
+            setIsBannerVisible(true);
+        }
     }
 
     function goToHome(){
@@ -52,6 +58,12 @@ export default function Header({ productIdAndNameList }) {
                 <h2><NavLink className="homeButton" to="/">Home</NavLink></h2>
                 <h2><NavLink className="catalogButton" to="/catalog">Catalog</NavLink></h2>
                 <img className="cartImage" src={cart} alt="cart" onClick={goToCart}/>
+                {isBannerVisible && <div className="banner-container" onClick={() => {setIsBannerVisible(false)}}>
+                    <div className="banner-background"></div>
+                    <div className="cart-is-empty-banner">The cart is empty
+                        <h4 className="close-banner" onClick={() => {setIsBannerVisible(false)}}>Close</h4>
+                    </div>
+                </div>}
             </div>
         </header>
     )
