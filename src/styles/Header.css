@@ -108,7 +108,7 @@ header {
   }
 }
 
-.banner-container {
+.bannerContainer {
   position: absolute;
   top: 0;
   left: 0;
@@ -116,7 +116,7 @@ header {
   height: 100vh;
 }
 
-.banner-background {
+.bannerBackground {
   position: absolute;
   top: 0;
   left: 0;
@@ -126,7 +126,7 @@ header {
   opacity: 0.5;
 }
 
-.cart-is-empty-banner {
+.cartIsEmptyBanner {
   position: absolute;
   display: flex;
   align-items: center;
@@ -144,7 +144,7 @@ header {
   background-color: #FFF;
 }
 @media (max-width: 500px) {
-  .cart-is-empty-banner {
+  .cartIsEmptyBanner {
     left: calc(50vw - 150px);
     top: calc(50vh - 100px);
     width: 300px;
@@ -153,7 +153,7 @@ header {
   }
 }
 
-.close-banner {
+.closeBanner {
   margin-top: 20px;
   margin-bottom: 0;
   border-radius: 7px;
@@ -162,10 +162,10 @@ header {
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }
-.close-banner:hover {
+.closeBanner:hover {
   outline: 5px solid #3F826D;
 }
-.close-banner:active {
+.closeBanner:active {
   outline: 3px solid #3F826D;
 }
 

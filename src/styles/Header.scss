@@ -108,7 +108,7 @@ header {
   }
 }
 
-.banner-container{
+.bannerContainer{
   position: absolute;
   top: 0;
   left: 0;
@@ -116,7 +116,7 @@ header {
   height: 100vh;
 }
 
-.banner-background {
+.bannerBackground {
   position: absolute;
   top: 0;
   left: 0;
@@ -126,7 +126,7 @@ header {
   opacity: 0.5;
 }
 
-.cart-is-empty-banner{
+.cartIsEmptyBanner{
   position: absolute;
   display: flex;
   align-items: center;
@@ -152,7 +152,7 @@ header {
   }
 }
 
-.close-banner{
+.closeBanner{
   margin-top: 20px;
   margin-bottom: 0;
   border-radius: 7px;

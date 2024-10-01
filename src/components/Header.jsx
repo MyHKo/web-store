@@ -43,7 +43,7 @@ export default function Header({ productIdAndNameList }) {
                 dispatch(getProducts());
             else
                 filterProducts(searchString);
-        }, 500)
+        }, 200)
 
         return () => clearTimeout(searchProducts);
     }, [searchString]);
@@ -58,10 +58,10 @@ export default function Header({ productIdAndNameList }) {
                 <h2><NavLink className="homeButton" to="/">Home</NavLink></h2>
                 <h2><NavLink className="catalogButton" to="/catalog">Catalog</NavLink></h2>
                 <img className="cartImage" src={cart} alt="cart" onClick={goToCart}/>
-                {isBannerVisible && <div className="banner-container" onClick={() => {setIsBannerVisible(false)}}>
-                    <div className="banner-background"></div>
-                    <div className="cart-is-empty-banner">The cart is empty
-                        <h4 className="close-banner" onClick={() => {setIsBannerVisible(false)}}>Close</h4>
+                {isBannerVisible && <div className="bannerContainer" onClick={() => {setIsBannerVisible(false)}}>
+                    <div className="bannerBackground"></div>
+                    <div className="cartIsEmptyBanner">The cart is empty
+                        <h4 className="closeBanner" onClick={() => {setIsBannerVisible(false)}}>Close</h4>
                     </div>
                 </div>}
             </div>
