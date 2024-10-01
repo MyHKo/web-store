@@ -9,7 +9,7 @@ export default function CartPage() {
 
     return (
         <>
-            <Header/>
+            <Header isInCart={true}/>
             <div className="mainCartContainer">
                 {productsInCart.length === 0 ? <h2 className="cartIsEmptyMessage">Your cart is empty</h2> : <Products productIdAndNameList={productsInCart} isInCart={true}/>}
                 {productsInCart.length === 0 ? null : <div className="procceedWithPayment">

@@ -49,7 +49,7 @@ export default function ProductPage() {
 
     return (
         <>
-            <Header />
+            <Header isInCart={false}/>
             <div className="main-product-container">
                 <img className="product-photo" src={productData === null ? "LOADING":productData.image} alt="LOADING" />
 

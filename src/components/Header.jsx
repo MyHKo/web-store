@@ -7,7 +7,7 @@ import {setSearchString, setProductList} from "../redux/slice.js"
 import {useEffect, useState} from "react";
 import {getProducts} from "../redux/thunk.js";
 
-export default function Header({ productIdAndNameList }) {
+export default function Header({ productIdAndNameList, isInCart }) {
     const navigate = useNavigate();
     const [isBannerVisible, setIsBannerVisible] = useState(false);
     const { searchString, productsInCart } = useSelector((state) => state.globalStateSlice);
@@ -58,7 +58,7 @@ export default function Header({ productIdAndNameList }) {
                 <h2><NavLink className="homeButton" to="/">Home</NavLink></h2>
                 <h2><NavLink className="catalogButton" to="/catalog">Catalog</NavLink></h2>
                 <img className="cartImage" src={cart} alt="cart" onClick={goToCart}/>
-                {isBannerVisible && <div className="bannerContainer" onClick={() => {setIsBannerVisible(false)}}>
+                {isBannerVisible && !isInCart && <div className="bannerContainer" onClick={() => {setIsBannerVisible(false)}}>
                     <div className="bannerBackground"></div>
                     <div className="cartIsEmptyBanner">The cart is empty
                         <h4 className="closeBanner" onClick={() => {setIsBannerVisible(false)}}>Close</h4>
