@@ -1,4 +1,4 @@
-.main-cart-container{
+.mainCartContainer{
   width: 98%;
   min-height: 80vh;
   height: auto;
@@ -13,7 +13,7 @@
 
 }
 
-.procceed-with-payment {
+.procceedWithPayment {
   margin-top: 60px;
   margin-left: 150px;
   margin-bottom: 70px;
@@ -42,4 +42,12 @@
     margin-left: 30px;
     width: 200px;
   }
+}
+
+.cartIsEmptyMessage {
+  margin-top: 60px;
+  margin-left: 40px;
+  font-size: 30px;
+  width: 1000px;
+  color: #3F826D;
 }

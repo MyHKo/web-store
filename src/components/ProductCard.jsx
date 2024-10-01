@@ -5,7 +5,7 @@ import {setProductsInCart} from "../redux/slice.js";
 import "../styles/ProductCard.scss"
 
 
-export default function ProductCard({ id, isInCart}) {
+export default function ProductCard({ id, isInCart }) {
     const [productData, setProductData] = useState(null);
     const navigate = useNavigate();
     const dispatch = useDispatch();

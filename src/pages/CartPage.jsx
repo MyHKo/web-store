@@ -10,14 +10,13 @@ export default function CartPage() {
     return (
         <>
             <Header/>
-            <div className="main-cart-container">
-                  <Products productIdAndNameList={productsInCart} isInCart={true}/>
-                  <div className="procceed-with-payment">
-                    <h2>Continue Payment</h2>
-                </div>
+            <div className="mainCartContainer">
+                {productsInCart.length === 0 ? <h2 className="cartIsEmptyMessage">Your cart is empty</h2> : <Products productIdAndNameList={productsInCart} isInCart={true}/>}
+                {productsInCart.length === 0 ? null : <div className="procceedWithPayment">
+                       <h2>Continue Payment</h2>
+                  </div>}
             </div>
-
-            <Footer/>
+             <Footer/>
         </>
     )
 }
