@@ -38,6 +38,7 @@ h3 {
   cursor: pointer;
   transition: 0.2s ease-in-out;
   outline: 2px solid #3F826D;
+  user-select: none;
 }
 h3:hover {
   outline: 5px solid #3F826D;
