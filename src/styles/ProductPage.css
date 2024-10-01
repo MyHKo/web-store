@@ -64,9 +64,13 @@
   outline: 2px solid #3F826D;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  user-select: none;
 }
 .add-to-cart-button-on-page:hover {
   outline: 5px solid #3F826D;
+}
+.add-to-cart-button-on-page:active {
+  outline: 2px solid #3F826D;
 }
 @media (max-width: 1000px) {
   .add-to-cart-button-on-page {

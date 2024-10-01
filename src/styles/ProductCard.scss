@@ -42,6 +42,10 @@
     outline: 5px solid #3F826D;
   }
 
+  &:active {
+    outline: 3px solid #3F826D;
+  }
+
   @media (max-width: 800px) {
     width: 130px;
     height: 130px;
@@ -72,6 +76,7 @@
   font-size: 16px;
   margin-right: 40px;
   margin-top: 180px;
+  user-select: none;
 
   @media (max-width: 1150px) {
     margin-top: 20px

@@ -164,4 +164,8 @@ header {
   &:hover{
     outline: 5px solid #3F826D;
   }
+
+  &:active{
+    outline: 3px solid #3F826D;
+  }
 }

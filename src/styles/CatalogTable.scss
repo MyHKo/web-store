@@ -35,10 +35,14 @@ h3 {
   outline-offset: 7px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
-  outline: 2px solid #3F826D  ;
+  outline: 2px solid #3F826D;
 
   &:hover{
     outline: 5px solid #3F826D;
+  }
+
+  &:active {
+    outline: 2px solid #3F826D;
   }
 
   @media (max-width: 1000px) {

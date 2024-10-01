@@ -62,9 +62,14 @@
   outline: 2px solid #3F826D;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  user-select: none;
 
   &:hover{
     outline: 5px solid #3F826D;
+  }
+
+  &:active{
+    outline: 2px solid #3F826D;
   }
 
 

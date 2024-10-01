@@ -165,5 +165,8 @@ header {
 .close-banner:hover {
   outline: 5px solid #3F826D;
 }
+.close-banner:active {
+  outline: 3px solid #3F826D;
+}
 
 /*# sourceMappingURL=Header.css.map */

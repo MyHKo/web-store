@@ -42,6 +42,9 @@ h3 {
 h3:hover {
   outline: 5px solid #3F826D;
 }
+h3:active {
+  outline: 2px solid #3F826D;
+}
 @media (max-width: 1000px) {
   h3 {
     outline-offset: 2.5px;
