@@ -1,12 +1,16 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {useParams} from "react-router-dom";
-import "../styles/ProductPage.scss"
 import {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import { setProductsInCart } from "../redux/slice.js"
+import "../styles/ProductPage.scss"
 
 export default function ProductPage() {
     const { id } = useParams();
     const [productData, setProductData] = useState(null);
+    const dispatch = useDispatch();
+    const { productsInCart } = useSelector((state) => state.globalStateSlice);
     let informationBullets;
 
     async function getProductData(productId) {
@@ -29,6 +33,10 @@ export default function ProductPage() {
                 {arrayOfBullets}
             </ul>
         );
+    }
+
+    function addToCart(productId){
+        dispatch(setProductsInCart([...productsInCart, [productId, productData.name]]));
     }
 
     useEffect(() => {
@@ -54,7 +62,7 @@ export default function ProductPage() {
                     </p>
                 </div>
 
-                <div className="add-to-cart-button-on-page">
+                <div className="add-to-cart-button-on-page" onClick={() => {addToCart(id)}}>
                     <h2>Add to cart</h2>
                 </div>
             </div>

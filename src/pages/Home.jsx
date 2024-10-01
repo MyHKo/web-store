@@ -18,7 +18,7 @@ export default function Home() {
         <>
             <Header  productIdAndNameList={productIdAndNameList}/>
             <div className="mainContainer">
-                {productIdAndNameList === null ? "LOADING" : <Products productIdAndNameList={productIdAndNameList} />}
+                {productIdAndNameList === null ? "LOADING" : <Products productIdAndNameList={productIdAndNameList} isInCart={false}/>}
             </div>
             <Footer />
         </>
