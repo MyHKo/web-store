@@ -1,9 +1,11 @@
 import "../styles/CatalogTable.scss"
 import {useEffect, useState} from "react"
+import {useSelector} from "react-redux"
 import {NavLink} from "react-router-dom";
 
-export default function CatalogTable({ productIdAndNameList }) {
+export default function CatalogTable({  }) {
     const [rows, setRows] = useState([])
+    const { filteredProducts } = useSelector((state) => state.globalStateSlice);
 
     async function createRows(productIdAndNameList) {
         const newRows = [];
@@ -34,8 +36,8 @@ export default function CatalogTable({ productIdAndNameList }) {
     }
 
     useEffect(() => {
-        createRows(productIdAndNameList)
-    }, [productIdAndNameList])
+        createRows(filteredProducts)
+    }, [filteredProducts])
     
 
     const tableRows = rows.map((row) => (

@@ -16,9 +16,9 @@ export default function Catalog() {
 
         return (
             <>
-                <Header productIdAndNameList={productIdAndNameList} isInCart={false} canSearch={true}/>
+                <Header isInCart={false} canSearch={true}/>
                 <div className="main-catalog-container">
-                        {productIdAndNameList === null ? "LOADING" : <CatalogTable productIdAndNameList={productIdAndNameList}/>}
+                        {productIdAndNameList === null ? "LOADING" : <CatalogTable/>}
                 </div>
                 <Footer />
             </>

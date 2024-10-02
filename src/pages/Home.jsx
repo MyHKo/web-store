@@ -8,7 +8,7 @@ import "../styles/Home.scss"
 
 export default function Home() {
     const dispatch = useDispatch();
-    const { productIdAndNameList } = useSelector((state) => state.globalStateSlice);
+    const { filteredProducts } = useSelector((state) => state.globalStateSlice);
 
     useEffect(() => {
             dispatch(getProducts());
@@ -16,9 +16,9 @@ export default function Home() {
 
     return (
         <>
-            <Header  productIdAndNameList={productIdAndNameList} isInCart={false} canSearch={true}/>
+            <Header isInCart={false} canSearch={true}/>
             <div className="mainContainer">
-                {productIdAndNameList === null ? "LOADING" : <Products productIdAndNameList={productIdAndNameList} isInCart={false}/>}
+                {filteredProducts === null ? "LOADING" : <Products isInCart={false}/>}
             </div>
             <Footer />
         </>

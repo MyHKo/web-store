@@ -3,14 +3,14 @@ import logo from "../assets/logo.svg"
 import cart from "../assets/cart.svg"
 import {NavLink, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {setSearchString, setProductList} from "../redux/slice.js"
+import {setSearchString, setFilteredProductList} from "../redux/slice.js"
 import {useEffect, useState} from "react";
 import {getProducts} from "../redux/thunk.js";
 
-export default function Header({ productIdAndNameList, isInCart, canSearch}) {
+export default function Header({ isInCart, canSearch }) {
     const navigate = useNavigate();
     const [isBannerVisible, setIsBannerVisible] = useState(false);
-    const { searchString, productsInCart } = useSelector((state) => state.globalStateSlice);
+    const { searchString, productsInCart, productIdAndNameList } = useSelector((state) => state.globalStateSlice);
     const dispatch = useDispatch();
 
     function handleInputChange(event) {
@@ -31,10 +31,10 @@ export default function Header({ productIdAndNameList, isInCart, canSearch}) {
     }
 
     function filterProducts(searchPattern){
-        const filteredProducts = productIdAndNameList.filter((item) => {
-            return item[1].includes(searchPattern);
+        const filteredProductsArray = productIdAndNameList.filter((item) => {
+            return item[1].toLowerCase().includes(searchPattern.toLowerCase().trim());
         })
-        dispatch(setProductList(filteredProducts));
+        dispatch(setFilteredProductList(filteredProductsArray));
     }
 
     useEffect(() => {
