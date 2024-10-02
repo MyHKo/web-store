@@ -7,7 +7,7 @@ import {setSearchString, setProductList} from "../redux/slice.js"
 import {useEffect, useState} from "react";
 import {getProducts} from "../redux/thunk.js";
 
-export default function Header({ productIdAndNameList, isInCart }) {
+export default function Header({ productIdAndNameList, isInCart, canSearch}) {
     const navigate = useNavigate();
     const [isBannerVisible, setIsBannerVisible] = useState(false);
     const { searchString, productsInCart } = useSelector((state) => state.globalStateSlice);
@@ -53,7 +53,7 @@ export default function Header({ productIdAndNameList, isInCart }) {
             <div className="headerContainer">
                 <img className="logoImage" src={logo} alt="logo" onClick={goToHome}/>
                 <form>
-                    <input className="searcher" type="text" placeholder="Search" onChange={(event)=>{handleInputChange(event)}} value={searchString}/>
+                    <input className="searcher" disabled={!canSearch} type="text" placeholder="Search" onChange={(event)=>{handleInputChange(event)}} value={searchString}/>
                 </form>
                 <h2><NavLink className="homeButton" to="/">Home</NavLink></h2>
                 <h2><NavLink className="catalogButton" to="/catalog">Catalog</NavLink></h2>

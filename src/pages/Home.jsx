@@ -16,7 +16,7 @@ export default function Home() {
 
     return (
         <>
-            <Header  productIdAndNameList={productIdAndNameList} isInCart={false}/>
+            <Header  productIdAndNameList={productIdAndNameList} isInCart={false} canSearch={true}/>
             <div className="mainContainer">
                 {productIdAndNameList === null ? "LOADING" : <Products productIdAndNameList={productIdAndNameList} isInCart={false}/>}
             </div>

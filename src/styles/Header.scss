@@ -51,7 +51,7 @@ header {
   }
 }
 
-.searcher {
+.searcher{
   height: 5vh;
   width: 20vw;
   border-radius: 7px;
@@ -64,6 +64,12 @@ header {
 
     @media (max-width: 700px) {
       outline: 3px solid #3F826D;
+    }
+  }
+
+  &:disabled{
+    &:hover, &:focus{
+      outline: 0;
     }
   }
 
