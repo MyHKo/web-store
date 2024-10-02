@@ -1,11 +1,9 @@
 import ProductCard from './ProductCard.jsx';
-import {useSelector} from 'react-redux';
 import "../styles/Products.scss"
 
-export default function Products({ isInCart }) {
-    const { filteredProducts } = useSelector((state) => state.globalStateSlice);
+export default function Products({ productIdAndNameList, isInCart }) {
 
-    const productCardsList = filteredProducts.map((item) => (
+    const productCardsList = productIdAndNameList.map((item) => (
         <ProductCard id={item[0]} key={item[0]} isInCart={isInCart}/>
     ))
 

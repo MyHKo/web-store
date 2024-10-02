@@ -18,7 +18,7 @@ export default function Home() {
         <>
             <Header isInCart={false} canSearch={true}/>
             <div className="mainContainer">
-                {filteredProducts === null ? "LOADING" : <Products isInCart={false}/>}
+                {filteredProducts === null ? "LOADING" : <Products isInCart={false} productIdAndNameList={filteredProducts}/>}
             </div>
             <Footer />
         </>

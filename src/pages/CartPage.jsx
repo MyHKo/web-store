@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 export default function CartPage() {
     const { productsInCart } = useSelector((state) => state.globalStateSlice)
+    console.log(productsInCart)
 
     return (
         <>
