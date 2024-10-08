@@ -1,4 +1,4 @@
-import "@catalogPage/styles/CatalogTable.scss"
+import style from "@catalogPage/styles/CatalogTable.module.scss"
 import {useEffect, useState} from "react"
 import {useSelector} from "react-redux"
 import {NavLink} from "react-router-dom";
@@ -50,9 +50,9 @@ export default function CatalogTable() {
         <table>
             <thead>
             <tr>
-                <th className="id-collumn"><h3 onClick={() => {sortRows(1)}}>ID</h3></th>
-                <th className="name-collumn"><h3 onClick={() => {sortRows(2)}}>Name</h3></th>
-                <th className="description-collumn"><h3 onClick={() => {sortRows(3)}}>Description</h3></th>
+                <th className={style.idCollumn}><h3 onClick={() => {sortRows(1)}}>ID</h3></th>
+                <th className={style.nameCollumn}><h3 onClick={() => {sortRows(2)}}>Name</h3></th>
+                <th className={style.descriptionCollumn}><h3 onClick={() => {sortRows(3)}}>Description</h3></th>
             </tr>
             </thead>
             <tbody>

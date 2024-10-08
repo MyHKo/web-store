@@ -1,5 +1,5 @@
 import ProductCard from '@components/ProductCard/ProductCard.jsx';
-import "@components/Products/Products.scss"
+import style from "@components/Products/Products.module.scss"
 
 export default function Products({ productIdAndNameList, isInCart }) {
 
@@ -9,7 +9,7 @@ export default function Products({ productIdAndNameList, isInCart }) {
 
     return (
         <>
-        <div className="cardsContainer">
+        <div className={style.cardsContainer}>
             {productCardsList}
         </div>
         </>

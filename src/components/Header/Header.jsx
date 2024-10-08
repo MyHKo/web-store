@@ -1,4 +1,4 @@
-import "@components/Header/Header.scss"
+import style from "@components/Header/Header.module.scss"
 import logo from "@components/Header/assests/logo.svg"
 import cart from "@components/Header/assests/cart.svg"
 import {NavLink, useNavigate} from "react-router-dom";
@@ -50,18 +50,18 @@ export default function Header({ isInCart, canSearch }) {
 
     return (
         <header>
-            <div className="headerContainer">
-                <img className="logoImage" src={logo} alt="logo" onClick={goToHome}/>
+            <div className={style.headerContainer}>
+                <img className={style.logoImage} src={logo} alt="logo" onClick={goToHome}/>
                 <form>
-                    <input className="searcher" disabled={!canSearch} type="text" placeholder="Search" onChange={(event)=>{handleInputChange(event)}} value={searchString}/>
+                    <input className={style.searcher} disabled={!canSearch} type="text" placeholder="Search" onChange={(event)=>{handleInputChange(event)}} value={searchString}/>
                 </form>
-                <h2><NavLink className="homeButton" to="/">Home</NavLink></h2>
-                <h2><NavLink className="catalogButton" to="/catalog">Catalog</NavLink></h2>
-                <img className="cartImage" src={cart} alt="cart" onClick={goToCart}/>
-                {isBannerVisible && !isInCart && <div className="bannerContainer" onClick={() => {setIsBannerVisible(false)}}>
-                    <div className="bannerBackground"></div>
-                    <div className="cartIsEmptyBanner">The cart is empty
-                        <h4 className="closeBanner" onClick={() => {setIsBannerVisible(false)}}>Close</h4>
+                <h2><NavLink className={style.homeButton} to="/">Home</NavLink></h2>
+                <h2><NavLink className={style.catalogButton} to="/catalog">Catalog</NavLink></h2>
+                <img className={style.cartImage} src={cart} alt="cart" onClick={goToCart}/>
+                {isBannerVisible && !isInCart && <div className={style.bannerContainer} onClick={() => {setIsBannerVisible(false)}}>
+                    <div className={style.bannerBackground}></div>
+                    <div className={style.cartIsEmptyBanner}>The cart is empty
+                        <h4 className={style.closeBanner} onClick={() => {setIsBannerVisible(false)}}>Close</h4>
                     </div>
                 </div>}
             </div>

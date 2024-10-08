@@ -1,4 +1,4 @@
-.main-catalog-container {
+.mainCatalogContainer {
   width: 100%;
   min-height: 80vh;
   height: auto;
@@ -6,9 +6,9 @@
   display: flex;
 }
 @media (max-width: 700px) {
-  .main-catalog-container {
+  .mainCatalogContainer {
     padding-top: 7vh;
   }
 }
 
-/*# sourceMappingURL=CatalogPage.css.map */
+/*# sourceMappingURL=CatalogPage.module.css.map */

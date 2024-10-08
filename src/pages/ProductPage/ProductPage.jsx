@@ -1,6 +1,6 @@
 import Header from "@components/Header/Header.jsx";
 import Footer from "@components/Footer/Footer.jsx";
-import "@productPage/styles/ProductPage.scss"
+import style from "@productPage/styles/ProductPage.module.scss"
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
@@ -50,19 +50,19 @@ export default function ProductPage() {
     return (
         <>
             <Header isInCart={false} canSearch={false}/>
-            <div className="main-product-container">
-                <img className="product-photo" src={productData === null ? "LOADING":productData.image} alt="LOADING" />
+            <div className={style.mainProductContainer}>
+                <img className={style.productPhoto} src={productData === null ? "LOADING":productData.image} alt="LOADING" />
 
-                <div className="name-and-description">
-                    <h1 className="product-name-on-page">{productData === null ? "LOADING" : productData.name}</h1>
-                    <p className="product-description-on-page">
+                <div className={style.nameAndDescription}>
+                    <h1 className={style.productNameOnPage}>{productData === null ? "LOADING" : productData.name}</h1>
+                    <p className={style.productDescriptionOnPage}>
                         <p>{productData === null ? "LOADING" : productData.shortDescription}</p>
                         {informationBullets}
                         <p>{productData === null ? "LOADING" : productData.descriptionExpansion}</p>
                     </p>
                 </div>
 
-                <div className="add-to-cart-button-on-page" onClick={() => {addToCart(id)}}>
+                <div className={style.addToCartButtonOnPage} onClick={() => {addToCart(id)}}>
                     <h2>Add to cart</h2>
                 </div>
             </div>
