@@ -1,56 +1,17 @@
-.mainCartContainer {
-  width: 98%;
-  min-height: 80vh;
-  height: auto;
-  padding-top: 10vh;
-  padding-left: 30px;
-  overflow: auto;
-  display: flex;
-}
-@media (max-width: 1100px) {
-  .mainCartContainer {
-    flex-direction: column;
-  }
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "src/styles/global.scss";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   CartPage.scss 1:9  root stylesheet */
 
-.procceedWithPayment {
-  margin-top: 60px;
-  margin-left: 150px;
-  margin-bottom: 70px;
-  margin-right: 60px;
-  width: 300px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #3F826D;
-  border-radius: 7px;
-  outline-offset: 7px;
-  outline: 2px solid #3F826D;
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"src/styles/global.scss\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   CartPage.scss 1:9  root stylesheet";
 }
-.procceedWithPayment:hover {
-  outline: 5px solid #3F826D;
-}
-@media (max-width: 1100px) {
-  .procceedWithPayment {
-    margin-left: 65px;
-  }
-}
-@media (max-width: 500px) {
-  .procceedWithPayment {
-    margin-left: 30px;
-    width: 200px;
-  }
-}
-
-.cartIsEmptyMessage {
-  margin-top: 60px;
-  margin-left: 40px;
-  font-size: 30px;
-  width: 1000px;
-  color: #3F826D;
-}
-
-/*# sourceMappingURL=CartPage.css.map */

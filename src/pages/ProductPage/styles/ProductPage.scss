@@ -1,3 +1,5 @@
+@import "src/styles/global.scss";
+
 .product-photo {
   width: 300px;
   height: 300px;
@@ -5,7 +7,7 @@
   margin-left: 30px;
   border-radius: 7px;
   outline-offset: 7px;
-  outline: 5px solid #3F826D;
+  outline: 5px solid $primary-color;
 
   @media (max-width: 1000px) {
     height: 200px;
@@ -38,7 +40,7 @@
 }
 
 .product-name-on-page {
-  color: #3F826D;
+  color: $primary-color;
   margin-bottom: 4vh;
   margin-top: 0;
   padding: 0;
@@ -56,20 +58,20 @@
   align-items: center;
   margin-right: 60px;
   margin-top: 60px;
-  color: #3F826D;
+  color: $primary-color;
   border-radius: 7px;
   outline-offset: 7px;
-  outline: 2px solid #3F826D;
+  outline: 2px solid $primary-color;
   transition: 0.2s ease-in-out;
   cursor: pointer;
   user-select: none;
 
   &:hover{
-    outline: 5px solid #3F826D;
+    outline: 5px solid $primary-color;
   }
 
   &:active{
-    outline: 2px solid #3F826D;
+    outline: 2px solid $primary-color;
   }
 
 

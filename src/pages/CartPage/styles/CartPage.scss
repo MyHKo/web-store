@@ -1,3 +1,5 @@
+@import "src/styles/global.scss";
+
 .mainCartContainer{
   width: 98%;
   min-height: 80vh;
@@ -23,15 +25,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #3F826D;
+  color: $primary-color;
   border-radius: 7px;
   outline-offset: 7px;
-  outline: 2px solid #3F826D;
+  outline: 2px solid $primary-color;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 
   &:hover{
-    outline: 5px solid #3F826D;
+    outline: 5px solid $primary-color;
   }
 
   @media (max-width: 1100px) {
@@ -49,5 +51,5 @@
   margin-left: 40px;
   font-size: 30px;
   width: 1000px;
-  color: #3F826D;
+  color: $primary-color;
 }

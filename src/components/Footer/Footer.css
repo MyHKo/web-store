@@ -1,11 +1,17 @@
-footer {
-  height: 10vh;
-  margin: 0;
-  background-color: #ACF39D;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #3F826D;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "src/styles/global.scss";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   Footer.scss 1:9  root stylesheet */
 
-/*# sourceMappingURL=Footer.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"src/styles/global.scss\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Footer.scss 1:9  root stylesheet";
+}

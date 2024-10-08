@@ -1,66 +1,17 @@
-table {
-  width: 100%;
-  height: 100px;
-  border-collapse: collapse;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "src/styles/global.scss";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   CatalogTable.scss 1:9  root stylesheet */
 
-thead {
-  text-align: left;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"src/styles/global.scss\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   CatalogTable.scss 1:9  root stylesheet";
 }
-
-th {
-  border: 1px solid #3F826D;
-  color: #3F826D;
-  background-color: #ACF39D;
-  padding: 20px;
-}
-@media (max-width: 700px) {
-  th {
-    padding: 10px;
-  }
-}
-
-td {
-  border: 1px solid #3F826D;
-  padding: 20px;
-}
-@media (max-width: 700px) {
-  td {
-    padding: 10px;
-  }
-}
-
-h3 {
-  margin: 0;
-  display: inline-block;
-  border-radius: 7px;
-  outline-offset: 7px;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-  outline: 2px solid #3F826D;
-  user-select: none;
-}
-h3:hover {
-  outline: 5px solid #3F826D;
-}
-h3:active {
-  outline: 2px solid #3F826D;
-}
-@media (max-width: 1000px) {
-  h3 {
-    outline-offset: 2.5px;
-  }
-  h3:hover {
-    outline: 3.5px solid #3F826D;
-  }
-}
-
-.id-collumn {
-  width: 50px;
-}
-
-.name-collumn {
-  width: 150px;
-}
-
-/*# sourceMappingURL=CatalogTable.css.map */

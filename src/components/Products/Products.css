@@ -14,7 +14,7 @@
 }
 @media (max-width: 500px) {
   .cardsContainer {
-    padding-left: 0px;
+    padding-left: 0;
   }
 }
 
