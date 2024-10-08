@@ -1,9 +1,9 @@
-import "../../../styles/CatalogTable.scss"
+import "@catalogPage/styles/CatalogTable.scss"
 import {useEffect, useState} from "react"
 import {useSelector} from "react-redux"
 import {NavLink} from "react-router-dom";
 
-export default function CatalogTable({  }) {
+export default function CatalogTable() {
     const [rows, setRows] = useState([])
     const { filteredProducts } = useSelector((state) => state.globalStateSlice);
 

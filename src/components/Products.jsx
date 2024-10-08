@@ -1,5 +1,5 @@
-import ProductCard from './ProductCard.jsx';
-import "../styles/Products.scss"
+import ProductCard from '@components/ProductCard.jsx';
+import "@styles/components/Products.scss"
 
 export default function Products({ productIdAndNameList, isInCart }) {
 

@@ -1,7 +1,7 @@
-import Header from "../../components/Header.jsx";
-import Footer from "../../components/Footer.jsx";
-import "../../styles/CartPage.scss"
-import Products from "../../components/Products.jsx";
+import Header from "@components/Header.jsx";
+import Footer from "@components/Footer.jsx";
+import Products from "@components/Products.jsx";
+import "@cartPage/styles/CartPage.scss"
 import {useDispatch, useSelector} from "react-redux";
 
 export default function CartPage() {

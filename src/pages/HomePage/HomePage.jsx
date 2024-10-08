@@ -1,10 +1,10 @@
-import Header from "../../components/Header.jsx";
-import Footer from "../../components/Footer.jsx";
-import Products from "../../components/Products.jsx";
+import Header from "@components/Header.jsx";
+import Footer from "@components/Footer.jsx";
+import Products from "@components/Products.jsx";
+import "@homePage/styles/HomePage.scss"
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {getProducts} from "../../redux/thunk.js";
-import "../../styles/Home.scss"
+import {getProducts} from "@redux/thunk.js";
 
 export default function HomePage() {
     const dispatch = useDispatch();

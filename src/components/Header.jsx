@@ -1,11 +1,11 @@
-import "../styles/Header.scss"
+import "@styles/components/Header.scss"
 import logo from "../assets/logo.svg"
 import cart from "../assets/cart.svg"
 import {NavLink, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {setSearchString, setFilteredProductList} from "../redux/slice.js"
 import {useEffect, useState} from "react";
-import {getProducts} from "../redux/thunk.js";
+import {setSearchString, setFilteredProductList} from "@redux/slice.js"
+import {getProducts} from "@redux/thunk.js";
 
 export default function Header({ isInCart, canSearch }) {
     const navigate = useNavigate();
