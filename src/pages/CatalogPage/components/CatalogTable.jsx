@@ -1,4 +1,4 @@
-import "../styles/CatalogTable.scss"
+import "../../../styles/CatalogTable.scss"
 import {useEffect, useState} from "react"
 import {useSelector} from "react-redux"
 import {NavLink} from "react-router-dom";

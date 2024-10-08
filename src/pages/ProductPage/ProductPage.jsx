@@ -1,10 +1,10 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/Header.jsx";
+import Footer from "../../components/Footer.jsx";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import { setProductsInCart } from "../redux/slice.js"
-import "../styles/ProductPage.scss"
+import { setProductsInCart } from "../../redux/slice.js"
+import "../../styles/ProductPage.scss"
 
 export default function ProductPage() {
     const { id } = useParams();

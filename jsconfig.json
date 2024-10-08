@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*" : ["components/*"],
+      "@pages/*" : ["pages/*"],
+      "@utils" : ["utils/*"],
+      "@homePage/*" : ["pages/HomePage/*"],
+      "@cartPage/*" : ["pages/CartPage/*"],
+      "@catalogPage/*" : ["pages/CatalogPage/*"],
+      "@productPage/*" : ["pages/ProductPage/*"]
+    }
+  }
+}

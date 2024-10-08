@@ -1,12 +1,12 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import CatalogTable from "../components/CatalogTable";
+import Header from "../../components/Header.jsx";
+import Footer from "../../components/Footer.jsx";
+import CatalogTable from "./components/CatalogTable.jsx";
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {getProducts} from "../redux/thunk.js";
-import "../styles/Catalog.scss"
+import {getProducts} from "../../redux/thunk.js";
+import "../../styles/Catalog.scss"
 
-export default function Catalog() {
+export default function CatalogPage() {
         const dispatch = useDispatch();
         const { productIdAndNameList } = useSelector((state) => state.globalStateSlice);
 

@@ -1,12 +1,12 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Products from "../components/Products";
+import Header from "../../components/Header.jsx";
+import Footer from "../../components/Footer.jsx";
+import Products from "../../components/Products.jsx";
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {getProducts} from "../redux/thunk.js";
-import "../styles/Home.scss"
+import {getProducts} from "../../redux/thunk.js";
+import "../../styles/Home.scss"
 
-export default function Home() {
+export default function HomePage() {
     const dispatch = useDispatch();
     const { filteredProducts } = useSelector((state) => state.globalStateSlice);
 
