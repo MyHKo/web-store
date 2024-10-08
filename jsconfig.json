@@ -12,5 +12,6 @@
       "@catalogPage/*" : ["pages/CatalogPage/*"],
       "@productPage/*" : ["pages/ProductPage/*"]
     }
-  }
+  },
+  "include": ["src"]
 }
