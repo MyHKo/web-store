@@ -1,6 +1,6 @@
-import "@styles/components/Header.scss"
-import logo from "../assets/logo.svg"
-import cart from "../assets/cart.svg"
+import "@components/Header/Header.scss"
+import logo from "@components/Header/assests/logo.svg"
+import cart from "@components/Header/assests/cart.svg"
 import {NavLink, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";

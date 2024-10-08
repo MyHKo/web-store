@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
 import {setProductsInCart} from "@redux/slice.js";
-import "@styles/components/ProductCard.scss"
+import "@components/ProductCard/ProductCard.scss"
 
 
 export default function ProductCard({ id, isInCart }) {

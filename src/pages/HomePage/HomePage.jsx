@@ -1,6 +1,6 @@
-import Header from "@components/Header.jsx";
-import Footer from "@components/Footer.jsx";
-import Products from "@components/Products.jsx";
+import Header from "@components/Header/Header.jsx";
+import Footer from "@components/Footer/Footer.jsx";
+import Products from "@components/Products/Products.jsx";
 import "@homePage/styles/HomePage.scss"
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";

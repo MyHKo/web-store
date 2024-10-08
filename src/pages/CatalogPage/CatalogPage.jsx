@@ -1,5 +1,5 @@
-import Header from "@components/Header.jsx";
-import Footer from "@components/Footer.jsx";
+import Header from "@components/Header/Header.jsx";
+import Footer from "@components/Footer/Footer.jsx";
 import CatalogTable from "@catalogPage/components/CatalogTable.jsx";
 import "@catalogPage/styles/CatalogPage.scss"
 import {useEffect} from "react";
