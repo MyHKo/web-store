@@ -1,0 +1,86 @@
+@import "src/styles/global.scss";
+
+.productCard {
+  border-radius: 7px;
+  border: 2.5px solid $primary-color;
+  height: 250px;
+  width: 100%;
+  margin: 20px;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  padding-top: 20px;
+  padding-left: 20px;
+  overflow: hidden;
+
+  @media (max-width: 1250px) {
+    height: 300px;
+  }
+
+  @media (max-width: 1150px) {
+    flex-direction: column;
+    height: 400px;
+  }
+
+  @media (max-width: 500px) {
+    height: 420px;
+  }
+
+  @media (max-width: 380px) {
+    height: 480px;
+  }
+}
+
+.productImage {
+  margin-right: 20px;
+  width: 180px;
+  height: 180px;
+  border-radius: 7px;
+  outline: 3px solid $primary-color;
+  outline-offset: 7px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    outline: 5px solid $primary-color;
+  }
+
+  &:active {
+    outline: 3px solid $primary-color;
+  }
+
+  @media (max-width: 800px) {
+    width: 130px;
+    height: 130px;
+  }
+
+  @media (max-width: 500px) {
+    margin-bottom: 20px;
+  }
+}
+
+.productName {
+  color: $primary-color;
+  display: inline-block;
+  cursor: pointer;
+
+  @media (max-width: 500px) {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+
+.productDescription {
+  margin-right: 10%;
+}
+
+.removeProductButton{
+  color: $primary-color;
+  font-size: 16px;
+  margin-right: 40px;
+  margin-top: 180px;
+  user-select: none;
+
+  @media (max-width: 1150px) {
+    margin-top: 20px
+  }
+}

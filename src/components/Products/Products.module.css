@@ -1,0 +1,21 @@
+.cardsContainer {
+  width: 60%;
+  height: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  gap: 10px;
+  margin-right: 30px;
+}
+@media (max-width: 1000px) {
+  .cardsContainer {
+    width: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .cardsContainer {
+    padding-left: 0;
+  }
+}
+
+/*# sourceMappingURL=Products.module.css.map */

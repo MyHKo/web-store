@@ -1,0 +1,11 @@
+.mainContainer {
+  width: 100%;
+  min-height: 80vh;
+  height: auto;
+  padding-top: 10vh;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
+/*# sourceMappingURL=HomePage.module.css.map */

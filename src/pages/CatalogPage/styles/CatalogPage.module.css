@@ -1,0 +1,14 @@
+.mainCatalogContainer {
+  width: 100%;
+  min-height: 80vh;
+  height: auto;
+  padding-top: 10vh;
+  display: flex;
+}
+@media (max-width: 700px) {
+  .mainCatalogContainer {
+    padding-top: 7vh;
+  }
+}
+
+/*# sourceMappingURL=CatalogPage.module.css.map */
